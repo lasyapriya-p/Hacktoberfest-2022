@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter as tk
-
+#GUI
 class Application(Frame):
     def _init_(self,master):
         super(Application,self)._init_(master)
