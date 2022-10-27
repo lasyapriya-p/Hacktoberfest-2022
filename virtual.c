@@ -67,6 +67,31 @@ int create_account()
     fclose(fp2);
     
 }
+int login()
+{
+    printf("\n\n\n\t\t\t\t\t\t||||LOGIN||||\n\n");
+    char usname[10];
+    char pswd[13];
+    FILE *fp1;
+    fp1=fopen("new.txt","r");
+    fread(&acc,sizeof(acc),1,fp1);
+    printf("Enter the username:");
+    scanf("%s",&usname);
+    if(strcmp(acc.username,usname)==0)
+    {
+        if((password_check(acc.password))==1)
+        {
+           return menu2();
+        }
+    }
+    else
+    {
+        printf("User doesnot exist. Please create new account!\n");
+        return create_account();
+    }
+    fclose(fp1);
+}
+
 void menu1()
 {
     int choice;
