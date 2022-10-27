@@ -60,6 +60,11 @@ class Application(Frame):
         if self._alarm_id is None:
             self.countdown(self._starttime)
 
+    # Pause function
+    def pauseTime(self):
+        if self._alarm_id is not None:
+            self._paused = True
+
     # Reset function
     def resetTime(self):
         if self._alarm_id is not None:
@@ -68,6 +73,9 @@ class Application(Frame):
             self._paused = False
             self.countdown(0)
             self._paused = True
+    
+    def closeApp(self):
+        self.master.destroy()
 
     def countdown(self, timeInSeconds, start=True):
         if timeInSeconds == 0:
