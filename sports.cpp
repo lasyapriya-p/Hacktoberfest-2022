@@ -1409,6 +1409,14 @@ void insert(int new_data) {
    new_node->next = head;
    head = new_node;
 }
+void display() {
+   struct Node* ptr;
+   ptr = head;
+   while (ptr != NULL) {
+      cout<< ptr->data <<" ";
+      ptr = ptr->next;
+   }
+}
 //End
 void user::display()
 {
@@ -1662,6 +1670,22 @@ void user::homepage() //Home page
     }
 }
 
+void welcome() // Welcome page
+{
+    int x;
+    cout << "\t \t | ------------------------------ |"; 
+    // sleep(5);
+    cout << "\n\t | SPORTS ENTRY SYSTEM |"<<endl;
+    cout<<"1. Go to main content"<<endl;
+    cout<<"2. Exit"<<endl;
+    cin>>x;
+    if(x==1){
+        u.homepage();
+    }
+    else{
+        exit(1);
+    }
+}
 int main() //Main function
 {            
     welcome();
